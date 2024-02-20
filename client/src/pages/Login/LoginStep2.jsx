@@ -4,7 +4,6 @@ import StepHeading from "../../components/StepHeading";
 import Fieldset from "../../components/Fieldset";
 import Button from "../../components/Button";
 import { MONTHS } from "../../components/DatePicker";
-
 function LoginStep2() {
   const userData = useContext(UserContext);
   const formValues = userData.formData;

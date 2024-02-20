@@ -64,7 +64,7 @@ function LoginStep1() {
       </div>
       <DatePicker handleInputChange={handleInputChange} />
       <div className=" fixed bottom-12 left-1/2 w-20.8rem -translate-x-1/2 -translate-y-1/2 transform">
-        <Button variants="default">Create your account</Button>
+        <Button variants="default" >Create your account</Button>
       </div>
 
     </form>

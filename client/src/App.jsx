@@ -1,6 +1,7 @@
 
 import Landing from "./components/Landing";
 import { UserProvider } from './contexts/UserContext';
+import Home from "./pages/Home-feed/Home";
 import LoginStep1 from "./pages/Login/LoginStep1";
 import LoginStep2 from "./pages/Login/LoginStep2";
 import LoginStep3 from "./pages/Login/LoginStep3";
@@ -11,6 +12,9 @@ function App() {
   return (
     <>
       {/* <Landing /> */}
+      <Home />
+
+      
       <UserProvider>
         {/* <LoginStep1 /> */}
         {/* <LoginStep2 /> */}
