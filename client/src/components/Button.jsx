@@ -34,7 +34,7 @@ function Button({
     full: "p-5 w-full",
   };
 
-  const textType = {
+  const texttype = {
     primary: "text-twitter-default",
     secondary: "text-neutral-50",
   };
@@ -43,7 +43,7 @@ function Button({
     baseStyle,
     isdisabled,
     variantStyles[variants],
-    textType[type],
+    texttype[type],
     buttonSize[size],
   ].join(" ");
 
