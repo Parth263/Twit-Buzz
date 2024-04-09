@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types"; // ES6
 
-StepHeading.PropTypes = {
-  children: PropTypes.node,
+StepHeading.propTypes = {
+  children: PropTypes.node
 };
 
 function StepHeading({ children }) {

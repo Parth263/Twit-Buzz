@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types"; // ES6
 
-Button.PropTypes = {
+Button.propTypes = {
   children: PropTypes.node.isRequired,
   size: PropTypes.oneOf(["sm", "full", "md"]),
   variants: PropTypes.oneOf(["default", "outline", "solid"]),
@@ -12,7 +12,7 @@ Button.PropTypes = {
 function Button({
   children = "Add your text",
   variants = "default",
-  size = "md",
+  size = "",
   type = "",
   isdisabled = false,
   ...rest
@@ -21,11 +21,11 @@ function Button({
 
   const variantStyles = {
     default:
-      "backdrop-blur-x m-5 flex h-9 w-80 items-center justify-center gap-2.5 bg-neutral-50 px-6 py-2 shadow-md",
+      "backdrop-blur-x m-5 flex h-9 items-center justify-center gap-2.5 bg-neutral-50 px-6 py-2 shadow-md w-80 md:w-full ",
     outline:
       "bg-black m-5 flex h-9 w-80 items-center justify-center gap-2.5 px-6 py-2 border-stroke border-solid border shadow-md backdrop-blur-xl",
     solid:
-      "gap-2.5 px-6 py-4 hover:bg-twitter-hover bg-twitter-default text-neutral-50 text-2xl  disabled:bg-twitter-disabled disabled:cursor-not-allowed",
+      "gap-2.5 px-6 py-4 hover:bg-twitter-hover bg-twitter-default text-neutral-50 text-2xl w-80  disabled:bg-twitter-disabled disabled:cursor-not-allowed",
   };
 
   const buttonSize = {

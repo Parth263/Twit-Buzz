@@ -2,6 +2,8 @@ import React from 'react'
 import StepHeading from '../../components/StepHeading'
 import Fieldset from '../../components/Fieldset'
 import Button from '../../components/Button'
+import { Link } from 'react-router-dom'
+import { URLs } from '../../constants'
 
 function LoginStep4() {
   return (
@@ -12,13 +14,18 @@ function LoginStep4() {
           <p className="text-sm font-normal leading-normal text-neutral-500">
             Make sure it's 8 characters or more
           </p>
-          <Fieldset required text="Password" type="text" />
+          <Fieldset required text="Password" type="password" />
         </div>
       </section>
 
-      <div className="fixed bottom-16 left-1/2 w-20.8rem -translate-x-1/2 -translate-y-1/2 transform">
-        <Button variants="default" disabled={true}>Next</Button>
-      </div>
+      <Link
+        to={URLs.feed}
+        className="fixed bottom-16 left-1/2 w-20.8rem -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        <Button variant="default" disabled={false}>
+          Next
+        </Button>
+      </Link>
     </>
   )
 }

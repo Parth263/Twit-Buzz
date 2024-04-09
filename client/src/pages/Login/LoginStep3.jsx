@@ -3,6 +3,8 @@ import { UserContext } from "../../contexts/UserContext";
 import StepHeading from "../../components/StepHeading";
 import Fieldset from "../../components/Fieldset";
 import Button from "../../components/Button";
+import { URLs } from "../../constants";
+import { Link } from "react-router-dom";
 
 function LoginStep3() {
   const userData = useContext(UserContext);
@@ -10,7 +12,7 @@ function LoginStep3() {
   console.log(userData);
   return (
     <>
-      <section className="flex w-full flex-shrink-0 flex-col items-start gap-3 rounded-2xl px-0.9rem p-5">
+      <section className="flex w-full flex-shrink-0 flex-col items-start gap-3 rounded-2xl p-5">
         <div className="flex w-full flex-col gap-3 self-stretch">
           <StepHeading>We sent you the code</StepHeading>
           <p className="text-sm font-normal leading-normal text-neutral-500">
@@ -23,9 +25,14 @@ function LoginStep3() {
         </div>
       </section>
 
-      <div className="fixed bottom-16 left-1/2 w-20.8rem -translate-x-1/2 -translate-y-1/2 transform">
-        <Button variants="default" disabled={true}>Next</Button>
-      </div>
+      <Link
+        to={URLs.signUpStep4}
+        className="fixed bottom-16 left-1/2 w-20.8rem -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        <Button variant="default" disabled={false}>
+          Next
+        </Button>
+      </Link>
     </>
   );
 }

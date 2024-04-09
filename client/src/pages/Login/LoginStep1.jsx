@@ -5,9 +5,10 @@ import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import StepHeading from "../../components/StepHeading";
+import { URLs } from "../../constants";
 
 function LoginStep1() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { formData, setFormData } = useContext(UserContext);
   const [inputValues, setInputValues] = useState({
     name: "",
@@ -29,9 +30,9 @@ function LoginStep1() {
       onSubmit={(e) => {
         e.preventDefault();
         setFormData({ ...formData, ...inputValues });
-        // navigate(URLs.signUpStep2);
+        navigate(URLs.signUpStep2);
       }}
-      className="flex flex-col items-start gap-5 self-stretch p-5"
+      className="flex flex-col items-start gap-2 self-stretch p-5"
     >
       <StepHeading>Create your account</StepHeading>
 
@@ -45,11 +46,10 @@ function LoginStep1() {
       />
 
       <Fieldset
-        required
         text="Email"
-        type="text"
+        type="email"
         minLength={2}
-        inputvalue={inputValues.email}
+        inputValue={inputValues.email}
         onInputChange={(value) => handleInputChange("Email", value)}
       />
 
@@ -63,8 +63,8 @@ function LoginStep1() {
         </p>
       </div>
       <DatePicker handleInputChange={handleInputChange} />
-      <div className=" fixed bottom-12 left-1/2 w-20.8rem -translate-x-1/2 -translate-y-1/2 transform">
-        <Button variants="default" >Create your account</Button>
+      <div className=" fixed bottom-14 md:w-full ">
+        <Button variants="default">Create your account</Button>
       </div>
 
     </form>

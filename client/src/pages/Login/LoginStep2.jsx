@@ -4,6 +4,9 @@ import StepHeading from "../../components/StepHeading";
 import Fieldset from "../../components/Fieldset";
 import Button from "../../components/Button";
 import { MONTHS } from "../../components/DatePicker";
+import { URLs } from "../../constants";
+import { Link } from "react-router-dom";
+
 function LoginStep2() {
   const userData = useContext(UserContext);
   const formValues = userData.formData;
@@ -12,21 +15,21 @@ function LoginStep2() {
   }`;
 
   return (
-    <div>
-      <section className="flex w-full flex-shrink-0 flex-col items-start gap-3 rounded-2xl px-0.9rem p-5">
-        <div className="flex flex-col items-start gap-5 self-stretch">
+    <div className="">
+      <section className="flex flex-col items-start self-stretch gap-2 p-5 ">
+        <div>
           <StepHeading>Create your account</StepHeading>
           <Fieldset text="Name" value={formValues.name} type="text" />
-          <Fieldset text="Email" value={formValues.email} type="Email" />
+          <Fieldset text="Email" value={formValues.email} type="email" />
           <Fieldset text="Date of Birth" value={DOB} type="text" />
         </div>
-      </section>
 
-      <div className="mt-10 p-5">
-        <Button variants="solid" size="full" disabled={false}>
-          Sign up
-        </Button>
-      </div>
+        <Link to={URLs.signUpStep3} className=" mt-10 pt-5">
+          <Button variants="solid"   disabled={false}>
+            Sign up
+          </Button>
+        </Link>
+      </section>
     </div>
   );
 }

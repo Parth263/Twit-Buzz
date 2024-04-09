@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 import Tweet from "../../components/Tweet";
 import { TweetContext } from "../../contexts/TweetContext.jsx";
 
-function Home() {
+function HomeFeed() {
   const tweets = useContext(TweetContext);
   const tweetsData = [...tweets.userTweets].reverse();
 
@@ -32,4 +32,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeFeed;
